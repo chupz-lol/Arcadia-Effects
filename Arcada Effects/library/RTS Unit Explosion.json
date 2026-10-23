@@ -1,0 +1,1401 @@
+{
+  "app": "arcadia-effects",
+  "v": 2,
+  "doc": {
+    "v": 2,
+    "id": "fx_rts_unit_explosion_epic",
+    "name": "RTS Unit Explosion",
+    "comp": {
+      "w": 1024,
+      "h": 1024,
+      "dur": 1.85,
+      "fps": 60
+    },
+    "cam": {
+      "comp": 0
+    },
+    "exp": {
+      "cols": 8,
+      "rows": 8,
+      "frames": 64,
+      "cellW": 512,
+      "cellH": 512,
+      "t0": 0,
+      "t1": 1.75,
+      "mode": "rgba",
+      "thr": 0,
+      "ss": 1,
+      "pixelArt": false,
+      "cuts": null
+    },
+    "textures": [],
+    "layers": [
+      {
+        "id": "lr_exp_core_glint",
+        "name": "Blinding Core Flash",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.02,
+        "end": 0.22,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.05,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.18,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "ember",
+            "p": {}
+          },
+          "size": 380,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.35,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.04,
+                "v": 1.2,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.18,
+                "v": 0.15,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1,
+          "rot": 0,
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.95,
+          "glowSize": 1.4,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_exp_cherenkov_flare",
+        "name": "Cherenkov Flare Star",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.01,
+        "end": 0.18,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.035,
+              "v": 0.95,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.15,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "spark",
+            "p": {}
+          },
+          "size": 400,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.2,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.035,
+                "v": 1.15,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.15,
+                "v": 0.25,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1,
+          "rot": 18,
+          "color": [
+            150,
+            240,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.9,
+          "glowSize": 1.4,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_exp_shockwave_ring",
+        "name": "Hypersonic Shockwave Ring",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.01,
+        "end": 0.55,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 0.95,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.22,
+              "v": 0.65,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.48,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "ring",
+            "p": {
+              "th": 0.08
+            }
+          },
+          "size": 350,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.05,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.48,
+                "v": 1.5,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1,
+          "rot": 0,
+          "color": [
+            110,
+            245,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.85,
+          "glowSize": 1.8,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_exp_ground_pressure",
+        "name": "Ground Pressure Wave",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 0.62,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 0.85,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.28,
+              "v": 0.45,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.58,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "ring",
+            "p": {
+              "th": 0.18
+            }
+          },
+          "size": 360,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.1,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.58,
+                "v": 1.45,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1.08,
+          "rot": 35,
+          "color": [
+            255,
+            205,
+            110
+          ],
+          "squash": 0,
+          "glow": 0.6,
+          "glowSize": 1.6,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_exp_reactor_lightning",
+        "name": "Reactor Lightning Discharges",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0,
+        "end": 0.65,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 35,
+          "sy": 35,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 520,
+          "speedRnd": 0.35,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.01,
+              "n": 24
+            },
+            {
+              "t": 0.06,
+              "n": 16
+            }
+          ],
+          "seed": 7,
+          "branch": {
+            "chance": 38,
+            "spread": 36,
+            "lifeScale": 0.8,
+            "sizeScale": 0.65,
+            "speedScale": 0.78,
+            "maxGen": 2
+          }
+        },
+        "pt": {
+          "life": 0.46,
+          "lifeRnd": 0.25,
+          "render": "trail",
+          "trailCore": 0.38,
+          "zigzag": 2400,
+          "size": 16,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1.8
+              },
+              {
+                "t": 0.6,
+                "v": 1
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.65,
+                "v": 0.95
+              },
+              {
+                "t": 0.85,
+                "v": 0.5
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.35,
+                "c": [
+                  170,
+                  245,
+                  255
+                ]
+              },
+              {
+                "t": 0.75,
+                "c": [
+                  50,
+                  200,
+                  255
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  15,
+                  110,
+                  220
+                ]
+              }
+            ]
+          },
+          "drag": 0,
+          "glow": 0.9,
+          "glowSize": 2.2,
+          "glowBlur": 0.2
+        }
+      },
+      {
+        "id": "lr_exp_burning_chunks",
+        "name": "Radial Aerial Debris with Dense Smoke Trails",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 1.15,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 35,
+          "sy": 35,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 520,
+          "speedRnd": 0.45,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.01,
+              "n": 38
+            },
+            {
+              "t": 0.04,
+              "n": 22
+            }
+          ],
+          "seed": 42,
+          "sub": {
+            "on": true,
+            "emit": "life",
+            "rate": 45,
+            "count": 1,
+            "startAt": 0,
+            "dir": "omni",
+            "spread": 20,
+            "speed": 25,
+            "speedRnd": 0.5,
+            "inherit": 0.06,
+            "maxGen": 1,
+            "budget": 3500,
+            "under": false,
+            "pt": {
+              "life": 0.85,
+              "lifeRnd": 0.28,
+              "render": "sprite",
+              "sprite": {
+                "kind": "shape",
+                "id": "smoke",
+                "p": {}
+              },
+              "size": 52,
+              "sizeRnd": 0.35,
+              "sizeOL": {
+                "pts": [
+                  {
+                    "t": 0,
+                    "v": 0.35
+                  },
+                  {
+                    "t": 0.3,
+                    "v": 1.1
+                  },
+                  {
+                    "t": 1,
+                    "v": 1.7
+                  }
+                ]
+              },
+              "opacityOL": {
+                "pts": [
+                  {
+                    "t": 0,
+                    "v": 0.75
+                  },
+                  {
+                    "t": 0.35,
+                    "v": 0.55
+                  },
+                  {
+                    "t": 0.7,
+                    "v": 0.25
+                  },
+                  {
+                    "t": 1,
+                    "v": 0
+                  }
+                ]
+              },
+              "grad": {
+                "stops": [
+                  {
+                    "t": 0,
+                    "c": [
+                      130,
+                      105,
+                      85
+                    ]
+                  },
+                  {
+                    "t": 0.3,
+                    "c": [
+                      70,
+                      58,
+                      55
+                    ]
+                  },
+                  {
+                    "t": 0.7,
+                    "c": [
+                      42,
+                      36,
+                      40
+                    ]
+                  },
+                  {
+                    "t": 1,
+                    "c": [
+                      20,
+                      18,
+                      20
+                    ]
+                  }
+                ]
+              },
+              "drag": 3.2,
+              "glow": 0
+            }
+          }
+        },
+        "pt": {
+          "life": 0.95,
+          "lifeRnd": 0.28,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "ember",
+            "p": {}
+          },
+          "size": 65,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1.15
+              },
+              {
+                "t": 0.4,
+                "v": 0.75
+              },
+              {
+                "t": 1,
+                "v": 0.15
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.7,
+                "v": 0.9
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.25,
+                "c": [
+                  255,
+                  220,
+                  90
+                ]
+              },
+              {
+                "t": 0.65,
+                "c": [
+                  255,
+                  120,
+                  25
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  170,
+                  35,
+                  10
+                ]
+              }
+            ]
+          },
+          "gravY": 0,
+          "drag": 2.8,
+          "glow": 0.75,
+          "glowSize": 1.8
+        }
+      },
+      {
+        "id": "lr_exp_blazing_plasma_core",
+        "name": "Blazing White-Hot Plasma Core",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 0.75,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 55,
+          "sy": 55,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 350,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.01,
+              "n": 52
+            },
+            {
+              "t": 0.05,
+              "n": 34
+            }
+          ],
+          "seed": 19
+        },
+        "pt": {
+          "life": 0.58,
+          "lifeRnd": 0.35,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "flame",
+            "p": {
+              "taper": 0.45
+            }
+          },
+          "size": 135,
+          "sizeRnd": 0.4,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.4
+              },
+              {
+                "t": 0.3,
+                "v": 1.25
+              },
+              {
+                "t": 1,
+                "v": 0.3
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.45,
+                "v": 0.9
+              },
+              {
+                "t": 0.8,
+                "v": 0.4
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.25,
+                "c": [
+                  255,
+                  245,
+                  140
+                ]
+              },
+              {
+                "t": 0.6,
+                "c": [
+                  255,
+                  150,
+                  35
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  210,
+                  50,
+                  15
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 1.5,
+          "drag": 3.6,
+          "glow": 0.6,
+          "glowSize": 1.5
+        }
+      },
+      {
+        "id": "lr_exp_churning_fireball",
+        "name": "Volumetric Fireball Mass",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.02,
+        "end": 1.15,
+        "blend": "normal",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 75,
+          "sy": 75,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 310,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.02,
+              "n": 48
+            },
+            {
+              "t": 0.07,
+              "n": 30
+            }
+          ],
+          "seed": 33
+        },
+        "pt": {
+          "life": 0.85,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "smoke",
+            "p": {}
+          },
+          "size": 190,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.35
+              },
+              {
+                "t": 0.28,
+                "v": 1.1
+              },
+              {
+                "t": 1,
+                "v": 1.55
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.85
+              },
+              {
+                "t": 0.35,
+                "v": 0.95
+              },
+              {
+                "t": 0.7,
+                "v": 0.55
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  220
+                ]
+              },
+              {
+                "t": 0.2,
+                "c": [
+                  255,
+                  185,
+                  55
+                ]
+              },
+              {
+                "t": 0.45,
+                "c": [
+                  235,
+                  80,
+                  20
+                ]
+              },
+              {
+                "t": 0.75,
+                "c": [
+                  95,
+                  45,
+                  35
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  40,
+                  32,
+                  34
+                ]
+              }
+            ]
+          },
+          "rot": 0,
+          "rotRnd": 1,
+          "spin": 25,
+          "spinRnd": 1,
+          "drag": 3.8,
+          "turbMode": "curl",
+          "turbScale": 52,
+          "turbOct": 2,
+          "turbWind": 75,
+          "glow": 0.35,
+          "glowSize": 1.5
+        }
+      },
+      {
+        "id": "lr_exp_rolling_smoke",
+        "name": "Billowing Dark Smoke Cushion",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.04,
+        "end": 1.75,
+        "blend": "normal",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 65,
+          "sy": 65,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 190,
+          "speedRnd": 0.6,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.04,
+              "n": 40
+            },
+            {
+              "t": 0.12,
+              "n": 28
+            }
+          ],
+          "seed": 91
+        },
+        "pt": {
+          "life": 1.45,
+          "lifeRnd": 0.28,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "smoke",
+            "p": {}
+          },
+          "size": 240,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.4
+              },
+              {
+                "t": 0.3,
+                "v": 1.15
+              },
+              {
+                "t": 1,
+                "v": 1.8
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0
+              },
+              {
+                "t": 0.15,
+                "v": 0.88
+              },
+              {
+                "t": 0.55,
+                "v": 0.62
+              },
+              {
+                "t": 0.85,
+                "v": 0.25
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  75,
+                  62,
+                  58
+                ]
+              },
+              {
+                "t": 0.3,
+                "c": [
+                  48,
+                  42,
+                  45
+                ]
+              },
+              {
+                "t": 0.7,
+                "c": [
+                  32,
+                  28,
+                  30
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  18,
+                  17,
+                  18
+                ]
+              }
+            ]
+          },
+          "rot": 0,
+          "rotRnd": 1,
+          "spin": 18,
+          "spinRnd": 1,
+          "drag": 3.2,
+          "turbMode": "curl",
+          "turbScale": 48,
+          "turbOct": 3,
+          "turbWind": 65,
+          "glow": 0
+        }
+      },
+      {
+        "id": "lr_exp_rising_embers",
+        "name": "Floating Reactor Embers",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.08,
+        "end": 1.6,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 90,
+          "sy": 90,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 130,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.08,
+              "n": 35
+            },
+            {
+              "t": 0.18,
+              "n": 25
+            }
+          ],
+          "seed": 55
+        },
+        "pt": {
+          "life": 1.15,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "ember",
+            "p": {}
+          },
+          "size": 32,
+          "sizeRnd": 0.5,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.6
+              },
+              {
+                "t": 0.4,
+                "v": 1
+              },
+              {
+                "t": 1,
+                "v": 0.2
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.65,
+                "v": 0.8
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  220
+                ]
+              },
+              {
+                "t": 0.35,
+                "c": [
+                  255,
+                  170,
+                  45
+                ]
+              },
+              {
+                "t": 0.8,
+                "c": [
+                  210,
+                  60,
+                  15
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  140,
+                  25,
+                  5
+                ]
+              }
+            ]
+          },
+          "gravY": -65,
+          "drag": 2.2,
+          "turbMode": "curl",
+          "turbScale": 60,
+          "turbOct": 2,
+          "turbWind": 45,
+          "glow": 0.7,
+          "glowSize": 1.8
+        }
+      },
+      {
+        "id": "lr_exp_ground_dust",
+        "name": "Ground Dust Ring",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.02,
+        "end": 1.35,
+        "blend": "normal",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 90,
+          "sy": 90,
+          "dir": "out",
+          "angle": 0,
+          "spread": 360,
+          "speed": 550,
+          "speedRnd": 0.45,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.02,
+              "n": 30
+            }
+          ],
+          "seed": 66
+        },
+        "pt": {
+          "life": 1.1,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "smoke",
+            "p": {}
+          },
+          "size": 160,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.5
+              },
+              {
+                "t": 0.3,
+                "v": 1.1
+              },
+              {
+                "t": 1,
+                "v": 1.6
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.75
+              },
+              {
+                "t": 0.4,
+                "v": 0.5
+              },
+              {
+                "t": 0.8,
+                "v": 0.2
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  165,
+                  110,
+                  80
+                ]
+              },
+              {
+                "t": 0.4,
+                "c": [
+                  120,
+                  75,
+                  55
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  60,
+                  42,
+                  35
+                ]
+              }
+            ]
+          },
+          "drag": 4.5,
+          "turbMode": "curl",
+          "turbScale": 50,
+          "turbOct": 2,
+          "turbWind": 50,
+          "glow": 0
+        }
+      }
+    ]
+  },
+  "tex": {}
+}

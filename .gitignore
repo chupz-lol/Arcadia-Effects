@@ -1,0 +1,8 @@
+# Temporary rendered snapshots and preview cache
+.snap/
+Arcada Effects/.snap/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.log

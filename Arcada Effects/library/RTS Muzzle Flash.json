@@ -1,0 +1,643 @@
+{
+  "app": "arcadia-effects",
+  "v": 2,
+  "doc": {
+    "v": 2,
+    "id": "fx_rts_muzzle_flash_elongated",
+    "name": "RTS Muzzle Flash",
+    "comp": {
+      "w": 512,
+      "h": 1024,
+      "dur": 0.95,
+      "fps": 60
+    },
+    "cam": {
+      "comp": 0
+    },
+    "exp": {
+      "cols": 8,
+      "rows": 4,
+      "frames": 32,
+      "cellW": 256,
+      "cellH": 512,
+      "t0": 0,
+      "t1": 0.88,
+      "mode": "rgba",
+      "thr": 0,
+      "ss": 1,
+      "pixelArt": false,
+      "cuts": null
+    },
+    "textures": [],
+    "layers": [
+      {
+        "id": "lr_muz_starlight_glint",
+        "name": "Starlight Barrel Glint",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.015,
+        "end": 0.14,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.035,
+              "v": 0.9,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.11,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "spark",
+            "p": {}
+          },
+          "size": 140,
+          "x": 0,
+          "y": 300,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.35,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.035,
+                "v": 1.2,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.11,
+                "v": 0.15,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1.15,
+          "rot": 0,
+          "color": [
+            240,
+            252,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.9,
+          "glowSize": 1.8,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_muz_forward_plasma",
+        "name": "Hypersonic Forward Plasma Spear",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": -0.01,
+        "end": 0.28,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 290,
+          "shape": "point",
+          "sx": 8,
+          "sy": 8,
+          "dir": "dir",
+          "angle": -90,
+          "spread": 6,
+          "speed": 950,
+          "speedRnd": 0.35,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0,
+              "n": 28
+            },
+            {
+              "t": 0.02,
+              "n": 14
+            }
+          ],
+          "seed": 5
+        },
+        "pt": {
+          "life": 0.22,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "streak",
+            "p": {}
+          },
+          "size": 55,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.8
+              },
+              {
+                "t": 0.3,
+                "v": 1.3
+              },
+              {
+                "t": 1,
+                "v": 0.2
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.5,
+                "v": 0.85
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.3,
+                "c": [
+                  120,
+                  245,
+                  255
+                ]
+              },
+              {
+                "t": 0.7,
+                "c": [
+                  45,
+                  175,
+                  255
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  10,
+                  80,
+                  200
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 1,
+          "drag": 2.6,
+          "glow": 0.55,
+          "glowSize": 1.4
+        }
+      },
+      {
+        "id": "lr_muz_brake_vents",
+        "name": "Muzzle Brake Lateral V-Sparks",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": -0.01,
+        "end": 0.32,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 290,
+          "shape": "box",
+          "sx": 20,
+          "sy": 8,
+          "dir": "dir",
+          "angle": -90,
+          "spread": 85,
+          "speed": 680,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0,
+              "n": 30
+            },
+            {
+              "t": 0.025,
+              "n": 14
+            }
+          ],
+          "seed": 16
+        },
+        "pt": {
+          "life": 0.2,
+          "lifeRnd": 0.35,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "streak",
+            "p": {}
+          },
+          "size": 38,
+          "sizeRnd": 0.45,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1.1
+              },
+              {
+                "t": 1,
+                "v": 0.15
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.6,
+                "v": 0.8
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.35,
+                "c": [
+                  255,
+                  235,
+                  130
+                ]
+              },
+              {
+                "t": 0.8,
+                "c": [
+                  255,
+                  135,
+                  40
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  190,
+                  50,
+                  15
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 1.8,
+          "drag": 3.5,
+          "glow": 0.5,
+          "glowSize": 1.5
+        }
+      },
+      {
+        "id": "lr_muz_primary_smoke",
+        "name": "Expanding Conical Forward Smoke Plume",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 0.88,
+        "blend": "normal",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 275,
+          "shape": "circle",
+          "sx": 14,
+          "sy": 14,
+          "dir": "dir",
+          "angle": -90,
+          "spread": 28,
+          "speed": 550,
+          "speedRnd": 0.45,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.01,
+              "n": 18
+            },
+            {
+              "t": 0.04,
+              "n": 22
+            },
+            {
+              "t": 0.08,
+              "n": 24
+            },
+            {
+              "t": 0.14,
+              "n": 18
+            }
+          ],
+          "seed": 27
+        },
+        "pt": {
+          "life": 0.82,
+          "lifeRnd": 0.28,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "smoke",
+            "p": {}
+          },
+          "size": 110,
+          "sizeRnd": 0.4,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.35
+              },
+              {
+                "t": 0.25,
+                "v": 1.2
+              },
+              {
+                "t": 1,
+                "v": 2.3
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.12
+              },
+              {
+                "t": 0.2,
+                "v": 0.35
+              },
+              {
+                "t": 0.55,
+                "v": 0.2
+              },
+              {
+                "t": 0.85,
+                "v": 0.08
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  190,
+                  245,
+                  255
+                ]
+              },
+              {
+                "t": 0.25,
+                "c": [
+                  170,
+                  185,
+                  195
+                ]
+              },
+              {
+                "t": 0.65,
+                "c": [
+                  70,
+                  75,
+                  82
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  35,
+                  38,
+                  42
+                ]
+              }
+            ]
+          },
+          "rot": 0,
+          "rotRnd": 1,
+          "spin": 25,
+          "spinRnd": 1,
+          "drag": 1.8,
+          "turbMode": "curl",
+          "turbScale": 55,
+          "turbOct": 3,
+          "turbWind": 105,
+          "turbRamp": 0.3,
+          "glow": 0
+        }
+      },
+      {
+        "id": "lr_muz_secondary_wisp",
+        "name": "Asymmetrical Swirling Gas Filament",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.02,
+        "end": 0.85,
+        "blend": "normal",
+        "opacity": 1,
+        "em": {
+          "x": 8,
+          "y": 270,
+          "shape": "circle",
+          "sx": 18,
+          "sy": 12,
+          "dir": "dir",
+          "angle": -84,
+          "spread": 38,
+          "speed": 420,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.02,
+              "n": 16
+            },
+            {
+              "t": 0.06,
+              "n": 18
+            }
+          ],
+          "seed": 83
+        },
+        "pt": {
+          "life": 0.78,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "smoke",
+            "p": {}
+          },
+          "size": 115,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.3
+              },
+              {
+                "t": 0.3,
+                "v": 1.15
+              },
+              {
+                "t": 1,
+                "v": 2.2
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.1
+              },
+              {
+                "t": 0.25,
+                "v": 0.28
+              },
+              {
+                "t": 0.6,
+                "v": 0.16
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  170,
+                  230,
+                  245
+                ]
+              },
+              {
+                "t": 0.3,
+                "c": [
+                  140,
+                  155,
+                  165
+                ]
+              },
+              {
+                "t": 0.7,
+                "c": [
+                  65,
+                  70,
+                  78
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  28,
+                  30,
+                  34
+                ]
+              }
+            ]
+          },
+          "rot": 0,
+          "rotRnd": 1,
+          "spin": -22,
+          "spinRnd": 1,
+          "drag": 2,
+          "turbMode": "curl",
+          "turbScale": 46,
+          "turbOct": 2,
+          "turbWind": 90,
+          "glow": 0
+        }
+      }
+    ]
+  },
+  "tex": {}
+}

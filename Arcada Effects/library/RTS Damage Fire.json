@@ -1,0 +1,501 @@
+{
+  "app": "arcadia-effects",
+  "v": 2,
+  "doc": {
+    "v": 1,
+    "id": "fx_rts_damage_fire",
+    "name": "RTS Damage Fire",
+    "comp": {
+      "w": 512,
+      "h": 512,
+      "dur": 2.4,
+      "fps": 60
+    },
+    "cam": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1,
+      "comp": 0
+    },
+    "exp": {
+      "cols": 8,
+      "rows": 4,
+      "frames": 32,
+      "cellW": 256,
+      "cellH": 256,
+      "t0": 0.8,
+      "t1": 1.8,
+      "mode": "rgba",
+      "thr": 0,
+      "ss": 1,
+      "pixelArt": false,
+      "cuts": null
+    },
+    "textures": [],
+    "layers": [
+      {
+        "id": "lr_fire_under_glow",
+        "name": "Under-Smoke Thermal Glow",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": 0,
+        "end": 2.4,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 0.85,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.3,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.6,
+              "v": 0.8,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.9,
+              "v": 0.98,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 1.2,
+              "v": 0.85,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 1.5,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 1.8,
+              "v": 0.8,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 2.1,
+              "v": 0.98,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 2.4,
+              "v": 0.85,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "ember",
+            "p": {}
+          },
+          "size": 240,
+          "x": 0,
+          "y": 0,
+          "scale": 1.1,
+          "aspect": 1,
+          "rot": 0,
+          "color": [
+            255,
+            130,
+            20
+          ],
+          "squash": 0,
+          "glow": 1,
+          "glowSize": 1.8,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_fire_white_core",
+        "name": "White-Hot Burning Core",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0,
+        "end": 2.4,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 30,
+          "sy": 30,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 110,
+          "speedRnd": 0.45,
+          "rate": 42,
+          "bursts": [],
+          "seed": 11
+        },
+        "pt": {
+          "life": 0.48,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "flame",
+            "p": {
+              "taper": 0.4
+            }
+          },
+          "size": 80,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.5
+              },
+              {
+                "t": 0.35,
+                "v": 1.25
+              },
+              {
+                "t": 1,
+                "v": 0.25
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.55,
+                "v": 0.9
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.25,
+                "c": [
+                  255,
+                  245,
+                  140
+                ]
+              },
+              {
+                "t": 0.65,
+                "c": [
+                  255,
+                  150,
+                  30
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  220,
+                  50,
+                  10
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 1.2,
+          "drag": 2.8,
+          "glow": 0.75,
+          "glowSize": 1.6
+        }
+      },
+      {
+        "id": "lr_fire_radial_tongues",
+        "name": "Radial Swirling Flame Tongues",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0,
+        "end": 2.4,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 38,
+          "sy": 38,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 210,
+          "speedRnd": 0.5,
+          "rate": 45,
+          "bursts": [],
+          "seed": 67
+        },
+        "pt": {
+          "life": 0.55,
+          "lifeRnd": 0.35,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "flame",
+            "p": {
+              "taper": 0.45
+            }
+          },
+          "size": 92,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.45
+              },
+              {
+                "t": 0.3,
+                "v": 1.25
+              },
+              {
+                "t": 1,
+                "v": 0.15
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.55,
+                "v": 0.85
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  250,
+                  180
+                ]
+              },
+              {
+                "t": 0.3,
+                "c": [
+                  255,
+                  160,
+                  35
+                ]
+              },
+              {
+                "t": 0.7,
+                "c": [
+                  240,
+                  70,
+                  15
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  170,
+                  25,
+                  5
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 1.45,
+          "drag": 2.9,
+          "turbMode": "curl",
+          "turbScale": 36,
+          "turbOct": 2,
+          "turbWind": 85,
+          "glow": 0.65,
+          "glowSize": 1.5
+        }
+      },
+      {
+        "id": "lr_fire_sparks_embers",
+        "name": "Flickering Reactor Embers",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0,
+        "end": 2.4,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 30,
+          "sy": 30,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 260,
+          "speedRnd": 0.55,
+          "rate": 32,
+          "bursts": [],
+          "seed": 91
+        },
+        "pt": {
+          "life": 0.48,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "spark",
+            "p": {}
+          },
+          "size": 32,
+          "sizeRnd": 0.45,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1.2
+              },
+              {
+                "t": 1,
+                "v": 0.15
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.6,
+                "v": 0.85
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  220
+                ]
+              },
+              {
+                "t": 0.35,
+                "c": [
+                  255,
+                  215,
+                  50
+                ]
+              },
+              {
+                "t": 0.8,
+                "c": [
+                  255,
+                  130,
+                  25
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  200,
+                  60,
+                  10
+                ]
+              }
+            ]
+          },
+          "alignVel": false,
+          "drag": 2.4,
+          "glow": 0.7,
+          "glowSize": 1.6
+        }
+      }
+    ]
+  }
+}

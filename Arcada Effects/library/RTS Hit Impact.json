@@ -1,0 +1,912 @@
+{
+  "app": "arcadia-effects",
+  "v": 2,
+  "doc": {
+    "v": 2,
+    "id": "fx_rts_hit_impact_epic",
+    "name": "RTS Hit Impact",
+    "comp": {
+      "w": 512,
+      "h": 512,
+      "dur": 0.75,
+      "fps": 60
+    },
+    "cam": {
+      "comp": 0
+    },
+    "exp": {
+      "cols": 8,
+      "rows": 4,
+      "frames": 32,
+      "cellW": 256,
+      "cellH": 256,
+      "t0": 0,
+      "t1": 0.7,
+      "mode": "rgba",
+      "thr": 0,
+      "ss": 1,
+      "pixelArt": false,
+      "cuts": null
+    },
+    "textures": [],
+    "layers": [
+      {
+        "id": "lr_hit_core_flash",
+        "name": "Armor Impact Core Flash",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.015,
+        "end": 0.18,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.04,
+              "v": 0.9,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.15,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "ember",
+            "p": {}
+          },
+          "size": 160,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.35,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.04,
+                "v": 1.2,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.15,
+                "v": 0.15,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1,
+          "rot": 0,
+          "color": [
+            255,
+            255,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.95,
+          "glowSize": 1.4,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_hit_spark_star",
+        "name": "Impact Spark Flare",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.01,
+        "end": 0.16,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 1,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.03,
+              "v": 0.9,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.14,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "spark",
+            "p": {}
+          },
+          "size": 170,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.25,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.03,
+                "v": 1.15,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.14,
+                "v": 0.2,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1,
+          "rot": 25,
+          "color": [
+            150,
+            245,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.9,
+          "glowSize": 1.4,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_hit_shock_ring",
+        "name": "Armor Plasma Shockwave",
+        "type": "sprite",
+        "on": true,
+        "solo": false,
+        "start": -0.01,
+        "end": 0.42,
+        "blend": "add",
+        "opacity": {
+          "keys": [
+            {
+              "t": 0,
+              "v": 0.95,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.16,
+              "v": 0.6,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            },
+            {
+              "t": 0.38,
+              "v": 0,
+              "i": {
+                "m": "ease"
+              },
+              "o": {
+                "m": "ease"
+              }
+            }
+          ]
+        },
+        "sp": {
+          "sprite": {
+            "kind": "shape",
+            "id": "ring",
+            "p": {
+              "th": 0.1
+            }
+          },
+          "size": 240,
+          "x": 0,
+          "y": 0,
+          "scale": {
+            "keys": [
+              {
+                "t": 0,
+                "v": 0.08,
+                "i": {
+                  "m": "lin"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              },
+              {
+                "t": 0.38,
+                "v": 1.35,
+                "i": {
+                  "m": "ease"
+                },
+                "o": {
+                  "m": "ease"
+                }
+              }
+            ]
+          },
+          "aspect": 1,
+          "rot": 0,
+          "color": [
+            100,
+            240,
+            255
+          ],
+          "squash": 0,
+          "glow": 0.8,
+          "glowSize": 1.8,
+          "glowBlur": 0.15,
+          "fps": 0
+        }
+      },
+      {
+        "id": "lr_hit_armor_sparks",
+        "name": "Ricochet Armor Sparks",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0,
+        "end": 0.7,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 25,
+          "sy": 25,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 520,
+          "speedRnd": 0.45,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0,
+              "n": 62
+            },
+            {
+              "t": 0.03,
+              "n": 36
+            },
+            {
+              "t": 0.06,
+              "n": 24
+            }
+          ],
+          "seed": 14
+        },
+        "pt": {
+          "life": 0.65,
+          "lifeRnd": 0.35,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "streak",
+            "p": {}
+          },
+          "size": 38,
+          "sizeRnd": 0.45,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1.2
+              },
+              {
+                "t": 0.5,
+                "v": 0.8
+              },
+              {
+                "t": 1,
+                "v": 0.15
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.7,
+                "v": 0.85
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.2,
+                "c": [
+                  255,
+                  255,
+                  130
+                ]
+              },
+              {
+                "t": 0.6,
+                "c": [
+                  255,
+                  215,
+                  30
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  255,
+                  155,
+                  15
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 2.2,
+          "drag": 3.6,
+          "glow": 0.8,
+          "glowSize": 1.8
+        }
+      },
+      {
+        "id": "lr_hit_lingering_embers",
+        "name": "Lingering Golden Embers",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 0.7,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 30,
+          "sy": 30,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 420,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.02,
+              "n": 38
+            }
+          ],
+          "seed": 29
+        },
+        "pt": {
+          "life": 0.68,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "ember",
+            "p": {}
+          },
+          "size": 24,
+          "sizeRnd": 0.4,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.6
+              },
+              {
+                "t": 0.4,
+                "v": 1
+              },
+              {
+                "t": 1,
+                "v": 0.2
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.7,
+                "v": 0.85
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  180
+                ]
+              },
+              {
+                "t": 0.35,
+                "c": [
+                  255,
+                  230,
+                  40
+                ]
+              },
+              {
+                "t": 0.8,
+                "c": [
+                  255,
+                  170,
+                  25
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  210,
+                  80,
+                  10
+                ]
+              }
+            ]
+          },
+          "drag": 2.4,
+          "glow": 0.85,
+          "glowSize": 1.8
+        }
+      },
+      {
+        "id": "lr_hit_energy_arcs",
+        "name": "Armor Energy Arcs",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 0.45,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 20,
+          "sy": 20,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 620,
+          "speedRnd": 0.35,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.01,
+              "n": 14
+            }
+          ],
+          "seed": 9
+        },
+        "pt": {
+          "life": 0.28,
+          "lifeRnd": 0.25,
+          "render": "trail",
+          "trailCore": 0.32,
+          "zigzag": 2200,
+          "size": 10,
+          "sizeRnd": 0.3,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1.4
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.6,
+                "v": 0.8
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.4,
+                "c": [
+                  150,
+                  245,
+                  255
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  35,
+                  160,
+                  255
+                ]
+              }
+            ]
+          },
+          "drag": 0,
+          "glow": 0.8,
+          "glowSize": 1.8
+        }
+      },
+      {
+        "id": "lr_hit_plasma_splash",
+        "name": "Impact Fire & Plasma Burst",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.01,
+        "end": 0.52,
+        "blend": "add",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 30,
+          "sy": 30,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 340,
+          "speedRnd": 0.45,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.01,
+              "n": 26
+            }
+          ],
+          "seed": 22
+        },
+        "pt": {
+          "life": 0.38,
+          "lifeRnd": 0.3,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "flame",
+            "p": {
+              "taper": 0.5
+            }
+          },
+          "size": 85,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.4
+              },
+              {
+                "t": 0.3,
+                "v": 1.2
+              },
+              {
+                "t": 1,
+                "v": 0.3
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 1
+              },
+              {
+                "t": 0.45,
+                "v": 0.85
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              {
+                "t": 0.25,
+                "c": [
+                  255,
+                  240,
+                  140
+                ]
+              },
+              {
+                "t": 0.65,
+                "c": [
+                  255,
+                  140,
+                  35
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  180,
+                  40,
+                  10
+                ]
+              }
+            ]
+          },
+          "alignVel": true,
+          "stretch": 1.4,
+          "drag": 3.8,
+          "glow": 0.5,
+          "glowSize": 1.6
+        }
+      },
+      {
+        "id": "lr_hit_smoke_puff",
+        "name": "Wispy Dark Armor Smoke",
+        "type": "emitter",
+        "on": true,
+        "solo": false,
+        "start": 0.02,
+        "end": 0.7,
+        "blend": "normal",
+        "opacity": 1,
+        "em": {
+          "x": 0,
+          "y": 0,
+          "shape": "circle",
+          "sx": 28,
+          "sy": 28,
+          "dir": "omni",
+          "angle": 0,
+          "spread": 360,
+          "speed": 170,
+          "speedRnd": 0.5,
+          "rate": 0,
+          "bursts": [
+            {
+              "t": 0.02,
+              "n": 22
+            },
+            {
+              "t": 0.08,
+              "n": 12
+            }
+          ],
+          "seed": 63
+        },
+        "pt": {
+          "life": 0.62,
+          "lifeRnd": 0.28,
+          "render": "sprite",
+          "sprite": {
+            "kind": "shape",
+            "id": "smoke",
+            "p": {}
+          },
+          "size": 115,
+          "sizeRnd": 0.35,
+          "sizeOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.4
+              },
+              {
+                "t": 0.3,
+                "v": 1.15
+              },
+              {
+                "t": 1,
+                "v": 1.65
+              }
+            ]
+          },
+          "opacityOL": {
+            "pts": [
+              {
+                "t": 0,
+                "v": 0.8
+              },
+              {
+                "t": 0.3,
+                "v": 0.6
+              },
+              {
+                "t": 0.7,
+                "v": 0.25
+              },
+              {
+                "t": 1,
+                "v": 0
+              }
+            ]
+          },
+          "grad": {
+            "stops": [
+              {
+                "t": 0,
+                "c": [
+                  120,
+                  110,
+                  105
+                ]
+              },
+              {
+                "t": 0.35,
+                "c": [
+                  65,
+                  58,
+                  62
+                ]
+              },
+              {
+                "t": 0.75,
+                "c": [
+                  38,
+                  35,
+                  38
+                ]
+              },
+              {
+                "t": 1,
+                "c": [
+                  22,
+                  20,
+                  22
+                ]
+              }
+            ]
+          },
+          "rot": 0,
+          "rotRnd": 1,
+          "spin": 20,
+          "spinRnd": 1,
+          "drag": 3.8,
+          "turbMode": "curl",
+          "turbScale": 36,
+          "turbOct": 2,
+          "turbWind": 60,
+          "glow": 0
+        }
+      }
+    ]
+  },
+  "tex": {}
+}
